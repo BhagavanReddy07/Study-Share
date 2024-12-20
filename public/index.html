@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Share</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <img src="logo.png" alt="Logo" class="logo">
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="main-box">
+      <h1>STUDY SHARE</h1>
+      <p class="subtitle">Study made easy....</p>
+
+      <!-- File Upload Section -->
+      <div class="upload-section">
+        <div class="input-box">
+          <label for="file">Choose a file</label>
+          <input type="file" id="file" name="file" required>
+        </div>
+
+        <div class="input-box">
+          <label for="subject">Choose a subject</label>
+          <input type="text" id="subject" name="subject" placeholder="Enter Subject Name" required>
+        </div>
+      </div>
+
+      <!-- Upload and Create Subject Buttons -->
+      <div class="buttons">
+        <button id="uploadButton">Upload</button>
+        <button id="createSubjectButton">Create Subject</button>
+      </div>
+
+      <!-- Choose Subject Section -->
+      <h2>Choose a Subject</h2>
+      <div class="subject-buttons" id="subjectsList">
+        <!-- Dynamically loaded subject buttons will appear here -->
+      </div>
+
+      <!-- Uploaded Files Section -->
+      <h2>Uploaded Files</h2>
+      <div id="files-list" class="files-list">
+        <!-- Dynamically loaded file list will appear here -->
+      </div>
+    </div>
+  </div>
+
+<!-- Create Subject Modal -->
+<div id="createSubjectModal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="closeCreateSubjectModal">&times;</span>
+    <h2>Create New Subject</h2>
+    <input type="text" id="newSubjectName" placeholder="Enter Subject Name">
+    <button id="createSubjectSubmit">Create</button>
+  </div>
+</div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>

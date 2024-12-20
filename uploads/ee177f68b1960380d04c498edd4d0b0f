@@ -1,0 +1,108 @@
+import java.util.Scanner;
+interface account{
+    void deposit();
+    void withdraw();
+    void calint();
+    void checkbal();
+} 
+class savings implements account
+{
+    double balance;
+    double intrst=0.03;
+    
+    public savings()
+    {
+        balance=0;
+    }
+    public void deposit(double amt)
+    {
+        balance+=amt;
+        System.out.println("balance =" + balance);
+    }
+    public void withdraw(double amt)
+    {
+        balance-=amt;
+        System.out.println("balance =" + balance);
+    }
+    public void calint()
+    {
+        balance*=intrst;
+        System.out.println(balance);
+    }
+    public void checkbal()
+    {
+        System.out.println("balance =" + balance);    
+    }
+
+    class current implements account
+    {
+        double balance;
+        double intrst=0;
+
+        public current()
+        {
+            balance=0;
+        }
+
+        public void deposit(double amt)
+        {
+            balance+=amt;
+            System.out.println("balance =" + balance);
+        }
+        public void withdraw(double amt)
+        {
+            balance-=amt;
+            System.out.println("balance =" + balance);
+        }
+        public void calint()
+        {
+            System.out.println("balance =" + balance);
+        }
+        public void checkbal()
+        {
+            System.out.println("balance =" + balance);
+        }
+    }
+}
+public class Test {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Which account you want to create?");
+        System.out.println("Enter 's' for savings a/c and 'c' for current a/c:");
+        char acctyp=sc.next().charAt(0);
+        account account=null;
+
+        if(acctyp=='s')
+        {
+            account = new savings();
+            System.out.println("Savings account created");
+        }
+        else if(acctyp=='c')
+        {
+            account = new current();
+            System.out.println("Current account created");
+        }
+        else
+        {
+            System.out.println("Enter 's' or 'c'.");
+            return;
+        }
+        while (true) {
+            System.out.println("1. Deposite in current a/c");
+            System.out.println("2. Withdraw from current a/c");
+            System.out.println("3. Interest of current a/c");
+            System.out.println("4. Balance of current a/c");
+            System.out.print("Enter your option:"); 
+            
+            int opt=sc.nextInt();
+            switch(opt)
+            {
+                case 1:
+                System.out.print("Enter amount to deposite:");
+                
+            }
+        }
+
+    }
+}
